@@ -1,0 +1,653 @@
+@import "vars"
+@import "fonts"
+@import "libs"
+
+::placeholder
+	color: #666
+
+::selection
+	background-color: $accent
+	color: #fff
+
+body
+	font-size: 16px
+	min-width: 320px
+	min-height: 100vh
+	height: 100%
+	position: relative
+	line-height: 1.65
+	font-family: $default-font
+	overflow-x: hidden
+	color: $text
+	background-color: #252532
+	input, textarea
+		border: #666 1px solid
+		outline: none
+		&:focus:required:invalid
+			border-color: red
+		&:required:valid
+			border-color: green
+
+.img-responsive
+	display: block
+	max-width: 100%
+	height: auto
+	&.img-width
+		width: 100%
+
+.text-center
+	text-align: center
+
+b, strong
+	font-weight: bold
+
+h1, h2, h3, h4, h5, h6
+  clear: both
+
+.game
+	display: block
+	transition:  opacity .6s
+	opacity: 1
+	top: 0
+	left: 0
+	&.hide
+		position: absolute
+		transform: translateX(-100%)
+		opacity: 0
+	
+
+header
+	display: block
+	position: relative
+	background-color: #fff
+	width: 100%
+	padding: 15px 0
+	text-align: center
+	transition: padding .25s ease
+	h1
+		transition: font-size .25s ease
+		font-size: 24px
+		font-family: Exo2
+		line-height: 28px
+		color: $header
+		margin: 0
+header.header-loading
+	padding: 20px 0
+	z-index: 101
+	h1
+		font-size: 44px
+		line-height: 58px
+
+//Toggle mnu
+.toggle-mnu 
+	position: fixed
+	top: 20px
+	left: 15px
+	display: block
+	width: 28px
+	height: 28px
+	z-index: 20
+	span:after, span:before 
+		content: ""
+		position: absolute
+		left: 0
+		top: 9px
+	span:after
+		top: 18px
+	span 
+		position: relative
+		display: block
+	span, span:after, span:before
+		width: 100%
+		height: 2px
+		background-color:  $header
+		transition: all 0.3s
+		backface-visibility: hidden
+		border-radius: 2px
+	&.on span
+		background-color: transparent
+	&.on span:before
+		transform: rotate(45deg) translate(-1px, 0px)
+	&.on span:after
+		transform: rotate(-45deg) translate(6px, -7px)
+
+.hidden-mnu
+	z-index: 99
+	width: 100%
+	height: 100%
+	position: fixed
+	top: 0
+	left: 0
+	background-color: #ffffff
+	color: $header
+	display: block
+	transform: translateY(-100%)
+	transition: transform .4s ease
+	z-index: 15
+	&.show
+		display: block
+		transform: translateY(0)
+		background-color: #fff
+		ul
+			opacity: 1
+	ul
+		display: block
+		position: relative
+		top: 50%
+		left: 50%
+		transform: translateY(-50%) translateX(-50%)
+		margin: 0
+		padding: 0
+		max-width: 300px
+		opacity: 0
+		transition: opacity .15s ease
+		li
+			display: block
+			margin-top: 12px
+			padding: 5px 12px
+			border: 2px solid $header
+			border-radius: 3px
+			font-weight: 600
+			transition: background-color .4s ease, color .4s ease
+			&:hover
+				cursor: pointer
+				background-color: $header
+				color: #fff
+			&:first-child
+				margin-top: 0
+
+
+.loader
+	position: fixed
+	top: 0
+	bottom: 0
+	width: 100%
+	height: 100%
+	z-index: 99
+	background-color: #252532
+
+.loader
+	img
+		display: block
+		position: absolute
+		z-index: 3
+		height: 240px
+		width: 240px
+		top:  0
+		left: 0
+		right: 0
+		bottom: 0
+		margin: auto
+		animation: upload 2s cubic-bezier(0.39, 0.56, 0.57, 1) 0s infinite  //alternate-reverse
+
+@keyframes upload
+  from
+    transform: scale(1) rotate(0deg)
+
+  to
+    transform: scale(1.1) rotate(360deg)
+
+.preview
+	display: block
+	position: relative
+	min-height: 100%
+	padding: 10px 15px
+	height: auto
+	transition: opacity .25s ease
+	z-index: 15
+	input
+		display: block
+		position: relative
+		border-radius: 6px
+		padding: 15px
+		z-index: 3
+		margin: 12px 0 0
+		font-size: 18px
+		font-weight: 600
+		margin-bottom: 20px
+	.rules
+		display: block
+		position: relative
+		height: 100%
+		margin: 10% auto 0
+		padding: 6px 15px
+		max-width: 680px
+		opacity: 1
+		transition: opacity .2s ease
+		p
+			font-size: 16px
+		ul
+			li
+				font-weight: 600
+				font-size: 18px
+		span
+			margin-top: 20px
+			display: block
+			position: relative
+
+.preview
+	.prince-bundle
+		display: none
+		position: absolute
+		top: 0
+		left: 50%
+		transform: translateX(-50%)
+		margin-top: 10%
+		text-align: center
+		opacity: 0
+		transition: opacity .7s ease
+		width: 100%
+		span
+			display: block
+			font-weight: 600
+			font-size: 20px
+		img
+			margin-top: 20px
+			display: inline-block
+			vertical-align: bottom
+			&:hover
+				cursor: pointer
+		img:nth-child(2)
+			margin-right: 40px
+
+
+.score-container
+	display: block
+	position: relative
+	max-width: 420px
+	width: 100%
+	margin: -20px auto 0
+	img
+		display: none
+		position: relative
+		margin: 0 auto
+		width: 100px
+		height: auto
+		&:first-child
+			display: block
+
+.score-board
+	display: block
+	position: relative
+	margin: 0 auto
+	border: 3px solid #ffffff
+	border-radius: 6px
+	text-align: center
+	width: 200px
+	color: #ffffff
+	font-size: 36px
+	font-weight: 200
+	padding: 6px 20px
+
+.badge
+	background-color: #fff
+	color: #252532
+	font-size: 18px
+	font-weight: 800
+	padding: 8px 21px
+	position: absolute
+	width: 110px
+	top: 10px
+	text-align: center
+	&:first-child
+		left: 0
+		transform: translateX(-100%)
+	&:nth-child(2)
+		right: 0
+		transform: translateX(100%)
+
+.result
+	display: block
+	position: relative
+	width: 100%
+	max-width: 640px
+	text-align: center
+	margin: 30px auto 0
+	font-size: 26px
+	font-weight: 800
+	color: #ffffff
+	p
+		transition: border .25s
+		padding: 3px
+		border: 3px solid
+
+.choices
+	display: block
+	position: relative
+	text-align: center
+	margin-top: 30px
+	cursor: default
+	transition: transform .6s ease, opacity .1s ease, margin .25s ease
+	&.hide
+		display: none
+		opacity: 0
+		transform: scale(0.1)
+	.choice
+		display: inline-block
+		margin-right: 80px
+		margin-top: 15px
+		opacity: 0.9
+		border-radius: 10em
+		border: 6px solid white
+		overflow: hidden
+		transition: transform .25s ease, opacity .25s ease, border .6s ease
+		z-index: 1
+		&:last-child
+			margin-right: 0
+		&:hover
+			cursor: pointer
+			opacity: 1
+			transform: translateY(-10px)
+
+
+.red-glow
+	border: 6px solid darken(#c38383, 10%) !important
+.yellow-glow
+	border: 6px solid darken(#d2cf93, 10%) !important
+.azufar-glow
+	border: 6px solid darken(#f1bfe9, 10%) !important
+.green-glow
+	border: 6px solid darken(#76bb76, 10%) !important
+
+#action-message
+	display: block
+	position: relative
+	width: 100%
+	text-align: center
+	color: #ffffff	
+	margin-top: 20px
+	font-weight: 600
+	font-size: 18px
+	transition: opacity .5s ease
+
+.fight-wrapper
+	display: block
+	position: relative
+	min-height: 10px
+	max-width: 720px
+	margin: 30px auto
+	background-color: rgba(#000, .1)
+	transform: scale(1)
+	padding: 15px
+	border-radius: 6px
+	transition: transform .4s ease, margin .25s ease, opacity .5s
+	&.hide
+		display: none
+		transform: scale(0.1)
+		opacity: 0
+	.player-frame, .computer-frame
+		display: inline-block
+		position: relative
+		padding: 15px
+		.player-icon
+			display: block
+			position: relative
+			width: 180px
+			height: auto
+	.computer-frame
+		float: right
+	.player-name, .computer-name
+		text-align: center
+		margin-bottom: 4px
+		font-size: 16px
+	.player-health, .computer-health
+		display: block
+		position: absolute
+		height: 17px
+		width: 120px
+		border: 2px solid rgba(#ffffff, .8)
+		left: 45px
+		border-radius: 3px
+		background-color: rgba(#000, .7)
+		overflow: hidden
+		span
+			position: absolute
+			z-index: 2
+			top: -3px
+			left: 0
+			font-size: 12px
+			text-align: center
+			width: 100%
+		.color-fill
+			position: absolute
+			z-index: 1
+			width: 100%
+			max-width: 100%
+			height: 100%
+			background-color: green
+			transition: max-width .25s ease
+	.player-frame
+		.player-abilities
+			display: block
+			position: relative
+			top: 80%
+			left: 50%
+			transform: translateX(-50%)
+			padding: 3px 6px
+			border-radius: 6px
+			background-color: rgba(#000, .3)
+			text-align: center
+			margin-top: -10px
+			cursor: default
+			.player-ability
+				display: inline-block
+				position: relative
+				max-width: 40px
+				border: 2px solid rgba(#ffffff, .8)
+				background-color: rgba(#000, .4)
+				border-radius: 10em
+				margin-right: 6px
+				padding: 3px
+				// transition: transform .4s ease
+				img
+					max-width: 100%
+					max-height: auto
+				&.animated
+					animation: buttonAnimation .6s ease
+				&:last-child
+					margin-right: 0
+				&:hover
+					cursor: pointer
+
+.player-ability__description
+	position: absolute
+	background-color: rgba(#000, .7)
+	padding: 4px 8px
+	font-size: 14px
+	width: 260px
+	border-radius: 6px
+	opacity: 0
+	transform: translateX(-50%) translateY(8px)
+	transition: opacity .25s ease
+
+.player-ability:hover
+	.player-ability__description
+		opacity: 1
+
+.computer-abilities
+	display: block
+	position: relative
+	top: 80%
+	left: 50%
+	transform: translateX(-50%)
+	padding: 3px 6px
+	border-radius: 6px
+	background-color: rgba(#000, .3)
+	text-align: center
+	margin-top: -10px
+	cursor: default
+	.computer-ability
+		display: inline-block
+		position: relative
+		max-width: 40px
+		border: 2px solid rgba(#ffffff, .8)
+		background-color: rgba(#000, .4)
+		border-radius: 10em
+		opacity: 0.8
+		margin-right: 6px
+		padding: 3px
+		img
+			max-width: 100%
+			max-height: auto
+		&.animated
+			animation: buttonAnimation .6s ease
+		&:last-child
+			margin-right: 0
+		&:hover
+			cursor: default
+
+.computer-ability, .player-ability
+	// overflow: hidden
+	z-index: 1
+	.ability-cooldown
+		position: absolute
+		z-index: 2
+		top: -2px
+		left: -2px
+		width: 41px
+		height: 41px
+		border-radius: 10em
+		border: 2px solid #FFE78C 
+		background-color: rgba(#000, .7)
+		// filter: contrast(50%)
+		span
+			position: relative
+			top: 4px
+			font-size: 14px
+			font-weight: 600
+			text-align: center
+			color: #FFE78C
+			transform: translateY(2px)
+
+
+@keyframes buttonAnimation
+	0%
+		transform: scale(1)
+	50%
+		transform: scale(1.1)
+		border-color: #FFE78C
+	75%
+		transform: scale(1.05)
+	100%
+		transform: scale(1)
+
+
+.player-got-dmg, .player-got-heal, .computer-got-dmg, .computer-got-heal, 
+	position: absolute
+	font-size: 24px
+	font-weight: 600
+	opacity: 0
+	z-index: 9
+	&.numericAnimation
+		animation: numericAnimation 1s ease
+
+.player-got-dmg
+	color: lighten(red, 12%)
+	top: 20px	
+	right: 10px
+.player-got-heal
+	color: lighten(green, 12%)
+	top: 40px
+	right: 10px
+
+.computer-got-dmg
+	color: lighten(gold, 12%)
+	top: 20px	
+	left: 10px
+.computer-got-heal
+	color: lighten(green, 12%)
+	top: 40px
+	left: 10px
+
+.map
+	display: block
+	position: fixed
+	height: 300px
+	max-width: 720px
+	width: 100%
+	left: 50%
+	transform: translateX(-50%)
+	bottom: 0
+	cursor: pointer
+	transition: transform .25s ease
+	z-index: 12
+	&__show-button
+		display: block
+		position: absolute
+		padding: 4px 32px
+		background-color: #16162C
+		top: 0
+		left: 50%
+		transform: translateX(-50%) translateY(0)
+		transition: transform .25s ease
+		.fa
+			transition: transform .5s ease
+	&.hidden
+		transform: translateX(-50%) translateY(100%)
+		.map__show-button
+			top: -34px
+			left: 50%
+			.fa
+				transform: rotate(180deg) 
+
+	.stage
+		display: block
+		position: absolute
+		width: 40px
+		height: 40px
+		border: 2px solid #ffffff
+		border-radius: 10em
+		text-align: center
+		z-index: 13
+		&.win
+			border-color: green
+			.fa
+				opacity: 1
+
+		&:hover
+			span
+				opacity: 1
+		.fa
+			display: block
+			position: absolute
+			background-color: #16162C
+			border-radius: 10em
+			padding: 10px
+			top: 0
+			left: 0
+			opacity: 0
+			width: 100%
+			height: 100%
+		span
+			position: absolute
+			font-weight: 600
+			font-size: 12px
+			line-height: 14px
+			width: 120px
+			bottom: -20px	
+			left: -50%
+			text-shadow: 0 3px 3px #000000
+			opacity: 0
+			transition: opacity .25s ease
+		&:first-child
+			bottom: 40px
+			left: 40px
+		&:nth-child(2)
+			bottom: 20px
+			left: 160px
+		&:nth-child(3)
+			bottom: 40px
+			left: 300px
+		
+
+
+
+@keyframes numericAnimation
+	0%
+		transform: scale(0.8)
+		opacity: 0
+	100%
+		transform: scale(1.5)	
+		opacity: 1
+
+@import "media" // Always at the end

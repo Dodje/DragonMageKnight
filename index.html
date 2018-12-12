@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+
+	<meta charset="utf-8">
+	<!-- <base href="/"> -->
+
+	<title>Рыцарь Маг Дракон: Спасти принцессу</title>
+	<meta name="description" content="">
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	
+	<!-- Template Basic Images Start -->
+	<meta property="og:image" content="path/to/image.jpg">
+	<link rel="icon" href="img/favicon/favicon.ico">
+	<link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon-180x180.png">
+	<!-- Template Basic Images End -->
+	
+	<!-- Custom Browsers Color Start -->
+	<meta name="theme-color" content="#000">
+	<!-- Custom Browsers Color End -->
+
+	<link rel="stylesheet" href="css/main.min.css?v=1.0.1">
+
+</head>
+
+<body>
+
+	<div class="game hide">
+		
+		<header class="">
+			<a class="toggle-mnu" href="#"><span></span></a>
+			<h1>Рыцарь Маг Дракон<small>: Освобождение</small></h1>
+			<div class="hidden-mnu">
+				<ul>
+					<li class="new-score">Обновить счет</li>
+					<li class="new-game">Новая игра</li>
+				</ul>
+			</div>
+		</header>
+	
+		<div class="score-container">
+			<img src="img/princess.png" alt="Принцесса">
+			<img src="img/prince.png" alt="Принц">
+			<div class="score-board">
+				<div class="badge" id="user-label">Игрок</div>
+				<div class="badge" id="computer-label">Азуфар</div>
+				<span id="user-score">0</span>:<span id="computer-score">0</span>
+			</div>
+		</div>
+	
+		<div class="fight-wrapper hide">
+			<div class="player-frame">
+				<div class="player-actions"></div>
+				<div class="player-name">Ваш боец</div>
+				<div class="player-health"><div class="color-fill"></div><span>100</span></div>
+				<img class="player-icon" src="img/frame_knight.png" alt="Рыцарь">
+				<div class="player-abilities">
+				</div>
+			</div>
+			<div class="computer-frame">
+				<div class="computer-actions"></div>
+				<div class="computer-name">Боец Азуфара</div>
+				<div class="computer-health"><div class="color-fill"></div><span>200</span></div>
+				<img class="computer-icon" src="img/frame_dragon.png" alt="Дракон">
+				<div class="computer-abilities">
+				
+				</div>
+			</div>
+		</div>
+	
+		<p id="action-message">Сделайте следующий ход!</p>
+	
+		<div class="choices">
+			<div class="choice" id="knight">
+				<img class="img-responsive" src="img/frame_knight.png" alt="Рыцырь">
+			</div>
+			<div class="choice" id="mage">
+				<img class="img-responsive" src="img/frame_mage.png" alt="Маг">
+			</div>
+			<div class="choice" id="dragon">
+				<img class="img-responsive" src="img/frame_dragon.png" alt="Дракон">
+			</div>
+		</div>
+		<div class="result">
+			<p>Азуфар наступает!</p>
+		</div>
+
+		<div class="map hidden">
+			<div class="map__show-button"><i class="fa fa-angle-down"></i></div>
+			<div class="stages">
+				
+			</div>
+			<!-- <div class="stage stage-first">
+				<img class="img-responsive" src="img/frame_knight.png" alt="">	
+				 <i class="fa fa-check"></i> 
+				<span>Первый уровень</span>
+			</div>
+			<div class="stage stage-second"></div> -->
+			<img src="img/map.svg" alt="Map">
+		</div>
+	</div>
+
+	
+
+	<div class="preview">
+		<div class="rules">
+			<span>Чтобы начать, </span>
+			<input class="type-player-name" type="text" placeholder="Введите имя">
+			<h2>Правила игры просты!</h2>
+			<p>Нужно спасти принцессу из рук Властелина Тьмы Азуфара.
+				За ход, Вы можете воспользоваться одним из своих бойцов, помните, 
+				что Азуфар в этом время не дремлет и направляет своих бойцов против вас.</p>
+				<ul>
+					<li>Магия Дракона сильнее магии Мага.</li>
+					<li>Коварство Мага испепелит Рыцаря.</li>
+					<li>Ловкость Рыцаря разит Дракона.</li>
+				</ul>
+
+		</div>
+
+		<div class="prince-bundle">
+			<span>Кого освобождаем от рук злобного Азуфара?</span>
+			<img src="img/princess.png" alt="Принцесса">
+			<img src="img/prince.png" alt="Принц">
+		</div>
+
+	</div>
+
+
+
+	<div class="loader">
+		<img src="img/diamond-hilt.png" alt="Loader sword">
+	</div>
+
+
+
+
+	<script src="js/scripts.min.js?v=1.0.1"></script>
+
+</body>
+</html>

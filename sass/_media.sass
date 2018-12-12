@@ -1,0 +1,152 @@
+@import "vars"
+
+
+/*==========  Desktop First  ==========*/
+
+// ≥1200px
++media-breakpoint-down(lg)
+
+  header.header-loading
+    h1
+      font-size: 38px 
+      line-height: 48px
+
+  .score-container 
+    margin-top: -15px 
+    > img
+      width: 80px
+      height: auto
+
+  .score-board
+    max-width: 140px
+    font-size: 24px
+    padding: 6px 14px
+
+  .badge
+    font-size: 16px
+    padding: 4px 16px
+    width: 100px
+    top: 10px
+
+  .choices
+    margin-top: 10px
+    .choice
+      width: 140px
+      height: 140px
+      margin-right: 50px
+      
+        
+
+  .result
+    max-width: 640px
+    margin: 30px auto 0
+    font-size: 24px
+    font-weight: 800
+    p
+      padding: 3px
+      border: 3px solid
+
+// ≥992px
++media-breakpoint-down(md)
+
+// ≥768px
++media-breakpoint-down(sm)
+
+  header.header-loading
+    h1
+      font-size: 30px 
+
+  .score-container > img
+    width: 70px
+    height: auto
+
+  .score-board
+    max-width: 120px
+    font-size: 24px
+    padding: 6px 14px
+
+  .badge
+    font-size: 16px
+    padding: 4px 16px
+    width: 100px
+    top: 10px
+
+  .choices
+    margin-top: 10px
+    .choice
+      width: 110px
+      height: 110px
+      margin-right: 30px
+
+  .result
+    max-width: 480px
+    margin: 30px auto 0
+    font-size: 20px
+  
+  .preview > .rules
+    h2
+      font-size: 20px
+
+// ≥576px
++media-breakpoint-down(xs)
+
+  header.header-loading
+    h1
+      font-size: 26px 
+      line-height: 32px
+
+  header > h1
+    line-height: 28px
+    max-width: 240px
+    margin: 0 auto
+    font-size: 20px
+    small
+      display: none
+
+  .toggle-mnu
+    max-width: 32px
+
+  .score-container
+    max-width: 320px
+    margin-top: -12px
+    > img
+      width: 60px
+
+  .score-board
+    max-width: 120px
+    font-size: 18px
+    padding: 6px 14px
+
+  .badge
+    font-size: 14px
+    padding: 4px 8px
+    width: 80px
+    top: 5px
+
+  .choices
+    margin-top: 10px
+    .choice
+      width: 80px
+      height: 80px
+      margin-right: 20px
+      border-width: 2px !important
+
+  .result
+    max-width: 90%
+    margin: 30px auto 0
+    font-size: 16px
+
+
+/*==========  Mobile First  ==========*/
+
+// ≤576px
++media-breakpoint-up(sm)
+
+// ≤768px
++media-breakpoint-up(md)
+
+// ≤992px
++media-breakpoint-up(lg)
+
+// ≤1200px
++media-breakpoint-up(xl)
