@@ -2,7 +2,14 @@ $(function() {
 
   var idInterval;
 
-
+  // old version
+  // function GameConfig(gameStatus, playerName, princessSex, userScore, computerScore){
+  //   this.gameStatus = gameStatus;
+  //   this.playerName = playerName;
+  //   this.princessSex = princessSex;
+  //   this.userScore = userScore;
+  //   this.computerScore = computerScore;
+  // }
   class GameConfig {
     constructor(gameStatus, playerName, princessSex, userScore, computerScore, currentStage) {
       this.gameStatus = gameStatus;
